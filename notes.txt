@@ -1,0 +1,15 @@
+features: (dimensions)
+..smoothness: 1
+..leaflet_desc: 7
+..gabor: 8
+..color: 12
+..fft: 50
+..geom: 51
+
+target:
+..lobe_ct: values = 1, 2, or 3
+
+
+caution pointers:
+..look out for classes with only 1 or 2 training examples, how to possible split into train and test
+..feature-correlation?
