@@ -13,3 +13,45 @@ target:
 caution pointers:
 ..look out for classes with only 1 or 2 training examples, how to possible split into train and test
 ..feature-correlation?
+..splitting data
+..discarding features? - color,fft?? 
+
+
+models:
+..decision trees - tuning: pruning	
+..logistic regression
+..svm
+..neural network
+
+preprocessing
+..do we need to one-hot encode?? --> not needed
+..bagging/boosting... xgboost??
+..pearson's correlation
+..PCA
+
+decision tree
+..out of the box random splitting gives us ~0.65 accuracy
+
+points to note:
+..try stratification/any other methods to deal with class imbalance
+..deciding the features
+	color
+	fft
+..grid search
+..Standard classifier algorithms like Decision Tree and Logistic Regression have a bias towards 
+classes which have large number of instances. They tend to only predict the majority class data. The 
+features of the minority class are treated as noise and are often ignored. Thus, there is a high 
+probability of misclassification of the minority class as compared to the majority class.
+..while working in an imbalanced domain accuracy is not an appropriate measure to evaluate model 
+performance. For eg: A classifier which achieves an accuracy of 98 % with an event rate of 2 % 
+is not accurate, if it classifies all instances as the majority class. And eliminates the 2 % 
+minority class observations as noise.
+
+
+SVM
+hyperparameters:
+.. classification error - high: focus more on classification, smaller margin, low: focus is more on getting a wider margin
+(tuning of hyperparameters using grid search)
+.. degree of polynomial
+.. gamma for radial
+
