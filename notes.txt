@@ -63,3 +63,13 @@ e.g. ANNs, CNNs, logistic regression, simple linear regression
 so that the minima can be attained without too great heights (due to huge differences
 in the ranges in the features)
 standardisation: for algorithms that are more distance based, like SVM, KNN, etc.
+
+
+neural networks
+..sgd taking too long
+..adam, batch = 128, epochs=100
+0. no dropout
+1. dropout 2.5, 0.5 
+2. dropout 2.5, 0.5, l2 regul on first layer
+3. dropout 0.5, 0.5, l2 regul on first layer
+4. increase epochs to 200 
