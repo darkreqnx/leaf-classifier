@@ -9,14 +9,6 @@ features: (dimensions)
 target:
 ..lobe_ct: values = 1, 2, or 3
 
-
-caution pointers:
-..look out for classes with only 1 or 2 training examples, how to possible split into train and test
-..feature-correlation?
-..splitting data
-..discarding features? - color,fft?? 
-
-
 models:
 ..decision trees - tuning: pruning	
 ..logistic regression
@@ -31,6 +23,9 @@ preprocessing
 
 decision tree
 ..out of the box random splitting gives us ~0.65 accuracy
+..criterion for splitting can be gini impurity or entropy - entropy better for
+high imbalance in classes, else both perform very similarly (entropy is computationally
+more intensive) 
 
 points to note:
 ..try stratification/any other methods to deal with class imbalance
@@ -47,11 +42,24 @@ performance. For eg: A classifier which achieves an accuracy of 98 % with an eve
 is not accurate, if it classifies all instances as the majority class. And eliminates the 2 % 
 minority class observations as noise.
 
+NN:
+preprocessing:
+pref bw 0,1
+normalize (or) standardize first and then normalize
 
 SVM
+preprocessing:
+soft standardization (sklearn standardscaler)
 hyperparameters:
+unbalanced input data - inverse training weights??
 .. classification error - high: focus more on classification, smaller margin, low: focus is more on getting a wider margin
 (tuning of hyperparameters using grid search)
 .. degree of polynomial
 .. gamma for radial
 
+when to use normalisation and standardisation?
+normalisation: for algorithms that require the parameters/attributes to be in [0,1]
+e.g. ANNs, CNNs, logistic regression, simple linear regression
+so that the minima can be attained without too great heights (due to huge differences
+in the ranges in the features)
+standardisation: for algorithms that are more distance based, like SVM, KNN, etc.
